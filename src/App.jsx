@@ -8,7 +8,7 @@ export default function App() {
         {cardData.map((card) => {
           return (
             <Card
-              key={card.header}
+              key={card.id}
               paragraph={card.text}
               header={card.header}
               id={card.id}
