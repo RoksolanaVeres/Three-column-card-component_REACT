@@ -1,20 +1,11 @@
-import { SedanIcon, LuxuryIcon, SuvIcon } from "./Icons";
 import CardButton from "./CardButton";
 
-export default function Card({ header, paragraph, id }) {
-  let isSedan = id === 1;
-  let isSuv = id === 2;
-  let isLuxury = id === 3;
-
+export default function Card({ header, paragraph, id, className, icon }) {
   return (
     <div
-      className={`${isSedan && "bg-brightOrange"} ${isSuv && "bg-darkCyan"} ${
-        isLuxury && "bg-veryDarkCyan"
-      }  max-w-96 p-12 first:rounded-tl-xl first:rounded-tr-xl last:rounded-bl-xl last:rounded-br-xl lg:max-w-72 lg:first:rounded-bl-xl lg:first:rounded-tr-none lg:last:rounded-bl-none lg:last:rounded-tr-xl`}
+      className={`${className} max-w-96 p-12 first:rounded-tl-xl first:rounded-tr-xl last:rounded-bl-xl last:rounded-br-xl lg:max-w-72 lg:first:rounded-bl-xl lg:first:rounded-tr-none lg:last:rounded-bl-none lg:last:rounded-tr-xl`}
     >
-      {isSedan && <SedanIcon />}
-      {isSuv && <SuvIcon />}
-      {isLuxury && <LuxuryIcon />}
+      <img src={icon} alt={`${header} icon`} />
 
       <h1 className="py-10 font-bigShouldersDisplay text-4xl uppercase text-veryLightGray">
         {header}

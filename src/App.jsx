@@ -6,14 +6,7 @@ export default function App() {
     <div className="flex min-h-screen items-center justify-center px-6 py-12 font-lexendDeca">
       <div className="grid text-white lg:grid-cols-3">
         {cardData.map((card) => {
-          return (
-            <Card
-              key={card.id}
-              paragraph={card.text}
-              header={card.header}
-              id={card.id}
-            />
-          );
+          return <Card key={card.id} {...card} />;
         })}
       </div>
     </div>
